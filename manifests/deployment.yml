@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: corvitweb 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: corvitweb
+  template:
+    metadata:
+      labels:
+        app: corvitweb 
+    spec:
+      containers:
+        - name: corvitweb 
+          image: corvitacr25228.azurecr.io/corvitweb
+          ports:
+          - containerPort: 80
